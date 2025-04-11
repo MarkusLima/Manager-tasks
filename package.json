@@ -11,7 +11,7 @@
   "keywords": [
     "Node.js API development"
   ],
-  "author": "Rafael Reis Franco",
+  "author": "Markus Lima",
   "license": "ISC",
   "description": "Task manager with Node.js",
   "dependencies": {

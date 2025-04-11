@@ -5,7 +5,7 @@ A simple task manager built with Node.js, Express, Prisma, and TypeScript. This 
 ## Technologies Used
 
 - **Node.js**: JavaScript runtime environment.
-- **Express.js**: Web framework for building REST APIs.
+- **Fastify.js**: Web framework for building REST APIs.
 - **Prisma**: ORM for interacting with the database.
 - **Zod**: Data validation library.
 - **JWT (JSON Web Token)**: Token-based authentication.
@@ -67,32 +67,20 @@ Here are some of the available routes in the project:
 
 #### 1. **Users**
 
-- **GET /users**: Returns a list of all users (requires authentication).
 - **POST /users**: Registers a new user.
-- **PATCH /users/:id**: Updates a user's information (requires authentication and role validation: `admin` or `member`).
-- **DELETE /users/:id**: Deletes a user (requires authentication and role validation: `admin` or `member`).
-- **POST /users/:userId/teams/:teamId**: Adds a user to a team (requires authentication and `admin` role).
+
 
 #### 2. **Sessions**
 
-- **POST /sessions**: Authenticates the user and returns a JWT.
-- **POST /sessions/refresh**: Authenticates the user with a refresh token and returns a new JWT.
+- **POST /auth**: Authenticates the user and returns a JWT.
 
-#### 3. **Teams**
-
-- **GET /teams**: Returns a list of all teams (requires authentication and `admin` role).
-- **POST /teams**: Creates a new team (requires authentication and `admin` role).
-- **GET /teams/:id**: Returns details of a specific team (requires authentication and role validation: `admin` or `member`).
-- **PATCH /teams/:id**: Updates a team's information (requires authentication and `admin` role).
-- **DELETE /teams/:id**: Deletes a team (requires authentication and `admin` role).
 
 #### 4. **Tasks**
 
-- **GET /tasks**: Returns a list of all tasks (requires authentication and role validation: `admin` or `member`).
-- **POST /tasks**: Creates a new task (requires authentication and role validation: `admin` or `member`).
-- **PATCH /tasks/:id**: Updates a task (requires authentication and role validation: `admin` or `member`).
-- **DELETE /tasks/:id**: Deletes a task (requires authentication and role validation: `admin` or `member`).
-- **GET /tasks/:id/history**: Returns the task history (requires authentication and role validation: `admin` or `member`).
+- **GET /tasks**: Returns a list of all tasks.
+- **POST /tasks**: Creates a new task.
+- **PATCH /tasks/:id**: Updates a task.
+- **DELETE /tasks/:id**: Deletes a task.
 
 ## Dependencies
 
@@ -101,8 +89,7 @@ Here are some of the available routes in the project:
 - **@prisma/client**: Prisma client for database interaction.
 - **bcrypt**: Library for password hashing.
 - **cors**: Middleware for enabling CORS.
-- **express**: Web framework for Node.js.
-- **express-async-errors**: Middleware for handling async errors in Express.
+- **fastfy**: Web framework for Node.js.
 - **jsonwebtoken**: Library for generating and verifying JWT tokens.
 - **supertest**: Library for testing APIs.
 - **tsup**: TypeScript bundler for production.
@@ -116,11 +103,3 @@ Here are some of the available routes in the project:
 - **ts-node**: Runs TypeScript code in Node.js.
 - **tsx**: Runs TypeScript files directly in Node.js.
 - **typescript**: Superset of JavaScript used for development.
-
-## License
-
-This project is licensed under the ISC License. Please refer to the [LICENSE](./LICENSE) file for more information.
-
----
-
-Developed by [Rafael Reis Franco](https://github.com/faelreis).
