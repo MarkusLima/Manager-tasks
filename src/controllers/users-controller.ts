@@ -1,7 +1,9 @@
+import { authConfig } from "@/config/auth";
 import { prisma } from "@/database/prisma";
 import { AppError } from "@/utils/app-error";
 import { hash } from "bcrypt";
 import { FastifyRequest, FastifyReply } from "fastify";
+import { sign } from "jsonwebtoken";
 import { z } from "zod";
 
 class UsersController {
@@ -39,9 +41,16 @@ class UsersController {
       },
     });
 
+    const { secret, expiresIn } = authConfig.jwt;
+  
+    if (!secret) throw new AppError("JWT secret is not defined", 500);
+
+    const token = sign({}, secret, {  subject: user.id, expiresIn });
+
     const { password: _, ...userWithoutPassword } = user;
 
-    return reply.status(201).send(userWithoutPassword);
+    return reply.status(201).send({ token, user: userWithoutPassword });
+
   }
 
   async update(req: FastifyRequest, reply: FastifyReply): Promise<any> {

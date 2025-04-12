@@ -8,7 +8,7 @@ import { sign } from "jsonwebtoken";
 
 class AuthController {
   
-  async create(request: FastifyRequest, reply: FastifyReply): Promise<any> {
+  async login(request: FastifyRequest, reply: FastifyReply): Promise<any> {
 
     const bodySchema = z.object({ email: z.string().email(), password: z.string().min(6) });
 

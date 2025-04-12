@@ -7,7 +7,7 @@ const taskController = new TaskController();
 async function tasksRoutes(app: FastifyInstance) {
   app.get("/", { preHandler: [ensureAuthenticated] }, taskController.index);
   app.post("/", { preHandler: [ensureAuthenticated] }, taskController.create);
-  app.patch("/:id", { preHandler: [ensureAuthenticated] }, taskController.update);
+  app.put("/:id", { preHandler: [ensureAuthenticated] }, taskController.update);
   app.delete("/:id", { preHandler: [ensureAuthenticated] }, taskController.delete);
 }
 
