@@ -1,6 +1,114 @@
+# API de Gerenciador de Tarefas
+
+Um gerenciador de tarefas simples construído com Node.js, Fastify, Prisma e TypeScript. Esta API permite que os usuários gerenciem tarefas, incluindo autenticação com JWT.
+
+## Tecnologias Utilizadas
+
+- **Node.js**: Ambiente de execução JavaScript.
+- **Fastify.js**: Framework web para construção de APIs REST.
+- **Prisma**: ORM para interagir com o banco de dados.
+- **Zod**: Biblioteca para validação de dados.
+- **JWT (JSON Web Token)**: Autenticação baseada em tokens.
+- **Bcrypt**: Biblioteca para hash de senhas.
+- **TypeScript**: Superset do JavaScript que melhora a confiabilidade e legibilidade do código.
+
+## Executando o Projeto
+
+### Pré-requisitos
+
+Antes de começar, você precisa ter o Node.js e o Prisma instalados. Se não os tiver, siga os passos abaixo.
+
+1. **Instalar o Node.js**:
+
+   - [Baixar Node.js](https://nodejs.org/)
+
+2. **Instalar o Prisma**:
+
+   - Após clonar o repositório, instale as dependências com o comando:
+
+     ```bash
+     npm install
+     ```
+
+3. **Configurar o banco de dados**:
+
+   - Configure seu banco de dados no arquivo `.env`. Uma configuração de exemplo é fornecida no arquivo `.env.example`. Copie este arquivo para `.env` e ajuste os valores conforme necessário.
+   - Execute a migração para configurar o banco de dados:
+
+     ```bash
+     npx prisma migrate dev
+     ```
+
+4. **Executar o projeto**:
+
+   - Para rodar o servidor em modo de desenvolvimento com recarregamento automático:
+
+     ```bash
+     npm run dev
+     ```
+
+   - Para compilar o projeto e executá-lo em modo de produção:
+
+     ```bash
+     npm run build
+     npm start
+     ```
+
+### Scripts Disponíveis
+
+- **`dev`**: Inicia o servidor em modo de desenvolvimento com recarregamento automático.
+- **`test:dev`**: Executa os testes em modo de desenvolvimento.
+- **`build`**: Compila o projeto para produção.
+- **`start`**: Inicia o servidor com os arquivos compilados para produção.
+
+### Rotas
+
+Algumas das rotas disponíveis no projeto:
+
+#### 1. **Usuários**
+
+- **POST /users**: Registra um novo usuário.
+
+#### 2. **Sessões**
+
+- **POST /auth**: Autentica o usuário e retorna um JWT.
+
+#### 3. **Tarefas**
+
+- **GET /tasks**: Retorna a lista de todas as tarefas.
+- **POST /tasks**: Cria uma nova tarefa.
+- **PATCH /tasks/:id**: Atualiza uma tarefa.
+- **DELETE /tasks/:id**: Remove uma tarefa.
+
+## Dependências
+
+### Dependências
+
+- **@prisma/client**: Cliente Prisma para interação com o banco de dados.
+- **bcrypt**: Biblioteca para hash de senhas.
+- **cors**: Middleware para habilitar CORS.
+- **fastify**: Framework web para Node.js.
+- **jsonwebtoken**: Biblioteca para geração e verificação de tokens JWT.
+- **supertest**: Biblioteca para testes de APIs.
+- **tsup**: Empacotador TypeScript para produção.
+- **zod**: Biblioteca para validação de dados.
+
+### Dependências de Desenvolvimento
+
+- **jest**: Framework de testes.
+- **prisma**: Ferramenta de migração e cliente do banco de dados.
+- **ts-jest**: Suporte TypeScript para o Jest.
+- **ts-node**: Executa código TypeScript no Node.js.
+- **tsx**: Executa arquivos TypeScript diretamente no Node.js.
+- **typescript**: Superset do JavaScript usado no desenvolvimento.
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
 # Task Manager API
 
-A simple task manager built with Node.js, Express, Prisma, and TypeScript. This API allows users to manage tasks, including authentication and role-based access.
+A simple task manager built with Node.js, Fastify, Prisma, and TypeScript. This API allows users to manage tasks, including authentication jwt.
 
 ## Technologies Used
 
