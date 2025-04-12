@@ -80,6 +80,8 @@ Algumas das rotas disponíveis no projeto:
 - **PATCH /tasks/:id**: Atualiza uma tarefa.
 - **DELETE /tasks/:id**: Remove uma tarefa.
 
+OBS: Use the https://github.com/MarkusLima/Manager-tasks-front project as a frontend
+
 ## Dependências
 
 ### Dependências
@@ -198,6 +200,8 @@ Here are some of the available routes in the project:
 - **POST /tasks**: Creates a new task.
 - **PATCH /tasks/:id**: Updates a task.
 - **DELETE /tasks/:id**: Deletes a task.
+
+OBS: Use the https://github.com/MarkusLima/Manager-tasks-front project as a frontend
 
 ## Dependencies
 
